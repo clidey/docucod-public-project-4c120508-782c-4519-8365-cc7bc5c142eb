@@ -1,0 +1,157 @@
+---
+title: "Prerequisites & System Requirements"
+description: "Outlines the required tools and supported environments, such as Node.js and npm, and details the minimum system requirements needed to run the project effectively. Ensures you have the right setup before proceeding with installation."
+---
+
+# Prerequisites & System Requirements
+
+Ensure you have the right environment and tools configured before proceeding with the installation and usage of **Y Combinator Graveyard Stories**. This page guides you through all necessary prerequisites including supported platforms, required software versions, and system specifications.
+
+---
+
+## 1. Supported Environments
+
+The application is a modern React-based web app built with Vite and TypeScript, optimized for developer productivity and performance.
+
+- **Operating Systems:**
+  - Windows 10 or later
+  - macOS 10.15 Catalina or later
+  - Popular Linux distributions (Ubuntu, Debian, Fedora, etc.)
+
+- **Node.js Environment:**
+  - Node.js version 18.x or higher is required.
+  - npm (Node Package Manager) bundled with Node.js is used to manage dependencies.
+
+<Tip>
+Ensure you have [Node.js](https://nodejs.org/en/download/) installed. You can verify your Node.js and npm versions by running:
+```bash
+node -v
+npm -v
+```
+The output should indicate Node.js >=18.0.0 and a recent npm version.
+</Tip>
+
+## 2. Software Prerequisites
+
+The project relies on several key tools and frameworks:
+
+- **Node.js & npm**: Runtime and package manager for managing dependencies
+- **Vite**: Modern frontend build tool — will come with the project setup
+- **TypeScript**: Strictly typed JavaScript variant used in the codebase
+- **React 18+**: UI framework for the app
+- **Tailwind CSS**: Utility-first CSS framework managing styling
+
+These are automatically installed or managed via the project’s `package.json`. No additional global packages are required.
+
+## 3. System Requirements
+
+To ensure smooth performance during development and testing, your system should meet these minimum specifications:
+
+| Component         | Minimum Requirement            |
+|-------------------|-------------------------------|
+| CPU               | 2 GHz dual-core or better      |
+| RAM               | 4 GB minimum (8 GB recommended)|
+| Disk Space        | At least 500 MB free space     |
+| Network           | Internet connection for package downloads and updates
+
+<Note>
+Though these are development-time requirements, running the built app in a production environment will only require a modern browser supporting ES2020 and React 18 features.
+</Note>
+
+## 4. Access Requirements
+
+- **GitHub repository access** (if cloning the source code)
+- **Basic command line proficiency** for setup and running local servers
+
+## 5. TypeScript Compiler Options
+
+The project uses a `tsconfig.app.json` optimized for React and modern JavaScript features:
+
+```json
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "strict": false,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["src"]
+}
+```
+
+This ensures modern syntax compatibility and smooth integration with the Vite bundler.
+
+## 6. Recommended Tools
+
+To enhance your experience setting up and developing with the application, consider using:
+
+- **Visual Studio Code (VS Code)** - with extensions for TypeScript, React, and Tailwind CSS
+- **Git** - for cloning and source control
+- **Recent web browsers** (Chrome, Firefox, Edge) for testing the app UI
+
+## 7. Environment Setup Verification
+
+After installing Node.js and cloning the repository:
+
+1. Run `npm install` in the project root to install all dependencies.
+2. Verify the installation by running `npm run dev` to start the development server on `http://localhost:8080`.
+3. Open this URL in your browser and check the homepage loads without error.
+
+<Check>
+If you see the filtered companies grid and the dashboard statistics on the homepage, your environment is correctly set up.
+</Check>
+
+## 8. Common Pitfalls & Tips
+
+- Ensure Node.js version is compatible; older versions may cause build failures.
+- If `npm install` fails, try clearing npm cache or deleting `node_modules` and reinstalling.
+- Confirm your internet connection during dependency installation.
+- Use the sidebar toggle shortcut <kbd>Ctrl</kbd>+<kbd>B</kbd> or <kbd>Cmd</kbd>+<kbd>B</kbd> to show/hide sidebar navigation (as implemented in the UI components).
+
+## 9. Troubleshooting
+
+<AccordionGroup title="Troubleshooting Prerequisite Issues">
+<Accordion title="Node.js Not Found or Wrong Version">
+- Run `node -v` and ensure version is 18 or above.
+- If not, download and install the correct version from the official Node.js website.
+</Accordion>
+<Accordion title="npm install Fails">
+- Clear npm cache: `npm cache clean --force`
+- Delete `node_modules` folder and `package-lock.json` or `bun.lockb` then re-run `npm install`.
+- Check for network or proxy issues interrupting package downloads.
+</Accordion>
+<Accordion title="Development Server Does Not Start">
+- Ensure no other service is running on port 8080.
+- Check terminal logs for error messages.
+- Verify `vite.config.ts` has `port: 8080` configured correctly.
+</Accordion>
+</AccordionGroup>
+
+---
+
+## 10. Next Steps
+
+Proceed to the [Installation Methods](/getting-started/setup-installation/installation-methods) to learn how to get the product installed, or start with the [Initial Configuration](/getting-started/first-run-config/basic-configuration) once installed.
+
+---
+
+## References & Further Reading
+
+- [Y Combinator Graveyard Stories - Architecture & Core Concepts](../overview/architecture-core-concepts/system-architecture)
+- [Target Audience & Use Cases](../overview/getting-started-product/target-audience)
+- [Product Value & Typical Use Cases](../overview/getting-started-product/value-proposition-use-cases)
+
+---
+
+For detailed repository and code references, see the [GitHub repository](https://github.com/modelorona/ycombinator-graveyard-stories).
+
+
+---
+
+*This concludes the Prerequisites & System Requirements documentation for Y Combinator Graveyard Stories.*
