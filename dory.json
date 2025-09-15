@@ -26,19 +26,25 @@
       {
         "groups": [
           {
-            "group": "Product Essentials",
+            "group": "Product Introduction \u0026 Value",
             "pages": [
-              "overview/getting-started-intro/product-overview",
-              "overview/getting-started-intro/value-use-cases",
-              "overview/getting-started-intro/quick-feature-glance"
+              "overview/getting-started-product/about-product",
+              "overview/getting-started-product/value-proposition-use-cases",
+              "overview/getting-started-product/target-audience"
             ]
           },
           {
-            "group": "How It Works: Architecture \u0026 Concepts",
+            "group": "Architecture \u0026 Core Concepts",
             "pages": [
               "overview/architecture-core-concepts/system-architecture",
               "overview/architecture-core-concepts/core-concepts-terminology",
-              "overview/architecture-core-concepts/integration-and-expansion"
+              "overview/architecture-core-concepts/quick-feature-overview"
+            ]
+          },
+          {
+            "group": "Integration and Extensibility",
+            "pages": [
+              "overview/integration-systems/integration-options"
             ]
           }
         ],
@@ -47,44 +53,22 @@
       {
         "groups": [
           {
-            "group": "Welcome \u0026 Setup",
+            "group": "Setup \u0026 Installation",
             "pages": [
-              "getting-started/welcome-setup/introduction-overview",
-              "getting-started/welcome-setup/choose-your-path",
-              "getting-started/welcome-setup/prerequisites"
+              "getting-started/setup-installation/prerequisites",
+              "getting-started/setup-installation/installation-methods"
             ]
           },
           {
-            "group": "Installation \u0026 First Run",
+            "group": "First Run \u0026 Configuration",
             "pages": [
-              "getting-started/installation-first-run/web-setup-lovable",
-              "getting-started/installation-first-run/local-install-dev",
-              "getting-started/installation-first-run/github-codespaces-editing",
-              "getting-started/installation-first-run/validation-troubleshooting"
+              "getting-started/first-run-config/basic-configuration",
+              "getting-started/first-run-config/first-successful-run",
+              "getting-started/first-run-config/troubleshooting-basics"
             ]
           }
         ],
         "tab": "Getting Started"
-      },
-      {
-        "groups": [
-          {
-            "group": "Core Workflows",
-            "pages": [
-              "guides/core-workflows/browse-companies",
-              "guides/core-workflows/filter-search",
-              "guides/core-workflows/reading-stories"
-            ]
-          },
-          {
-            "group": "Advanced Usage \u0026 Best Practices",
-            "pages": [
-              "guides/advanced-usage/data-insights",
-              "guides/advanced-usage/ui-efficiency"
-            ]
-          }
-        ],
-        "tab": "Guides"
       }
     ]
   },
