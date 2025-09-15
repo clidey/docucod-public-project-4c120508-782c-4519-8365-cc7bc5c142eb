@@ -1,0 +1,210 @@
+---
+title: "Troubleshooting Common Setup Issues"
+description: "Helps users quickly identify and resolve typical roadblocks encountered during setup or first run, such as dependency errors, build failures, or blank screens. Provides clear guidance and next steps to unblock your workflow."
+---
+
+# Troubleshooting Common Setup Issues
+
+Welcome to the troubleshooting guide for the Y Combinator Graveyard Stories application. This page is designed to help you quickly identify and resolve common roadblocks you might face during setup or your first run. Whether you encounter dependency errors, build failures, or a blank screen, these instructions will help you unblock your workflow with clear and actionable advice.
+
+---
+
+## 1. Common Setup Errors and Solutions
+
+### 1.1 Dependency Installation Failures
+
+**Symptoms:**
+- `npm install` or `bun install` fails with errors
+- Missing packages or incompatible versions
+
+**Steps to resolve:**
+1. Verify your environment meets all prerequisites, especially Node.js version and package manager (see [Prerequisites & System Requirements](../setup-installation/prerequisites)).
+2. Clear your package manager cache:
+
+```bash
+npm cache clean --force
+# or for bun
+bun cache clean
+```
+
+3. Delete the `node_modules` folder and lockfiles (`package-lock.json`, `bun.lockb`):
+
+```bash
+rm -rf node_modules package-lock.json bun.lockb
+```
+
+4. Reinstall dependencies:
+
+```bash
+npm install
+# or
+bun install
+```
+
+5. Ensure there are no permission issues or proxy/firewall restrictions blocking network access.
+
+**Tip:** Use the package manager you prefer consistently to avoid lockfile conflicts.
+
+---
+
+### 1.2 Build or Compilation Errors
+
+**Symptoms:**
+- Errors during `npm run dev` or equivalent start command related to TypeScript or bundling
+
+**Steps to resolve:**
+1. Confirm your TypeScript and dependencies are correctly installed and compatible. See [tsconfig.app.json](../../tsconfig.app.json) configuration.
+2. Run type-check explicitly:
+
+```bash
+tsc --noEmit
+```
+
+3. If type errors appear, review recent code changes or install missing types.
+4. Clear temporary build cache if using Vite or similar:
+
+```bash
+rm -rf node_modules/.vite
+```
+
+5. Restart the dev server.
+
+**Tip:** Ensure ESLint is configured correctly (see [eslint.config.js](../../eslint.config.js)) to spot common issues early.
+
+---
+
+### 1.3 Blank or Non-Loading UI
+
+**Symptoms:**
+- Development server runs but the UI is blank or does not load in the browser
+
+**Steps to resolve:**
+1. Check the terminal for runtime errors from the dev server.
+2. Confirm that `vite.config.ts` or your development server configuration has correct `host` and `port` settings (see [Initial Configuration](../first-run-config/basic-configuration)).
+3. Verify that the browser address matches the dev server (e.g., http://localhost:3000).
+4. Clear browser cache or open in incognito mode.
+5. Ensure React Router routes are set correctly (see `src/App.tsx`).
+
+```tsx
+<BrowserRouter>
+  <Routes>
+    <Route path="/" element={<Index />} />
+    <Route path="*" element={<NotFound />} />
+  </Routes>
+</BrowserRouter>
+```
+
+6. If using a proxy or firewall, ensure it is not blocking WebSocket connections required by the dev server.
+
+---
+
+### 1.4 Toast/Notification Issues
+
+**Symptoms:**
+- Toast messages not showing or dismissing improperly
+
+**Steps to resolve:**
+1. Confirm that toast providers (`Toaster` and `Sonner`) are included in your app root (`src/App.tsx`).
+2. Verify no conflicting versions or duplicates of toast components are in the node_modules.
+3. Review the usage in code with hooks `useToast` and exported `toast` functions (see [src/hooks/use-toast.ts](../src/hooks/use-toast.ts)).
+4. Refresh the app and check developer console for JavaScript errors related to UI components.
+
+---
+
+## 2. General Troubleshooting Tips
+
+- **Check Logs:** Always start by reviewing your terminal and browser console logs for errors.
+- **Version Matching:** Make sure Node.js, npm/bun, and all dependencies match the documented supported versions.
+- **Clean Slate:** Remove node_modules and lockfiles before fresh installs if you encounter strange issues.
+- **Incremental Testing:** Run commands step-by-step, starting from dependency installation, build, then start server.
+- **Network Issues:** Some issues stem from firewall or VPN restrictions—temporarily disable these if suspect.
+- **Documentation:** Cross-reference with the [Prerequisites & System Requirements](../setup-installation/prerequisites) and [Initial Configuration](../first-run-config/basic-configuration) pages.
+
+---
+
+## 3. When You’re Still Stuck
+
+- Visit the [Y Combinator Graveyard Stories GitHub repository](https://github.com/modelorona/ycombinator-graveyard-stories) to check for open issues or submit your own.
+- Consult the community forums or support channels if available.
+- Review detailed architectural insight in [How the App is Structured](../../overview/architecture-core-concepts/system-architecture) to better understand system internals.
+
+---
+
+## 4. Summary of Key Setup Checks
+
+| Issue                        | Quick Check / Fix                                                                 | Documentation Link                                                   |
+|------------------------------|---------------------------------------------------------------------------------|--------------------------------------------------------------------|
+| Dependency errors             | Clean cache, remove node_modules and lockfiles, reinstall                       | [Prerequisites & System Requirements](../setup-installation/prerequisites) |
+| Build errors                 | Run `tsc --noEmit`, check tsconfig, clear Vite cache                           | [Initial Configuration](../first-run-config/basic-configuration)    |
+| Blank UI                     | Confirm routes, dev server address, clear browser cache                        | [Your First Successful Run](../first-run-config/first-successful-run)|
+| Toasts/Notifications not working | Verify `Toaster` components in app, debug console                              | Source files: `src/hooks/use-toast.ts`, `src/components/ui/toast.tsx`|
+
+---
+
+<Tip>
+Proactively validate your environment and follow the installation and configuration steps precisely to avoid the most common pitfalls.
+</Tip>
+
+<Warning>
+Do not skip prerequisite checks; mismatches in Node.js or package managers frequently cause installation and runtime issues.
+</Warning>
+
+---
+
+## 5. Example: Clearing and Reinstalling Dependencies with npm
+
+```bash
+# Navigate to project root
+cd ycombinator-graveyard-stories
+
+# Remove existing node_modules and lockfiles
+rm -rf node_modules package-lock.json
+
+# Clear npm cache
+npm cache clean --force
+
+# Install dependencies fresh
+npm install
+
+# Start the development server
+npm run dev
+```
+
+## 6. Example: Confirming React Router Setup
+
+Check your `src/App.tsx` contains route setup similar to below:
+
+```tsx
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Index from "./pages/Index";
+import NotFound from "./pages/NotFound";
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+export default App;
+```
+
+Incorrect route setup or missing imports can cause blank screens.
+
+---
+
+## 7. Further Reading and Support
+
+- [Installation Methods](../setup-installation/installation-methods) for detailed setup options.
+- [Initial Configuration](../first-run-config/basic-configuration) for server and plugin setup insights.
+- [Your First Successful Run](../first-run-config/first-successful-run) for expected results and validation.
+- [Product Overview & Architecture](../../overview/architecture-core-concepts/system-architecture) to understand app flow.
+
+
+---
+
+Remember, persistence and systematic troubleshooting will get you up and running quickly. If you remain blocked after these steps, please reach out through the official support channels or the GitHub repository for assistance.
