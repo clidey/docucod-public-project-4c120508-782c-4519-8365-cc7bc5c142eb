@@ -1,0 +1,178 @@
+---
+title: "Using UI Features Efficiently"
+description: "A quick tour of helpful UI components—like tooltips, badges, and toast notifications—that improve the user experience. Gain tips for navigating information-rich views and using interactive elements."
+---
+
+# Using UI Features Efficiently
+
+Enhance your experience with Y Combinator Graveyard Stories by mastering the interactive UI features designed to make data exploration intuitive and insightful. This guide offers a concise walkthrough of key UI components—including badges, tooltips, and toast notifications—that empower you to navigate complex information smoothly and effectively.
+
+---
+
+## 1. Understanding the Company Cards
+
+The Company Card is your primary touchpoint with individual startup data in the YC Graveyard Stories app. Each card distills the vital information about a failed company into a clear, digestible format.
+
+### Key Elements on a Company Card
+
+- **Company Name & Batch Badge**
+  - The company name is prominently displayed.
+  - The batch badge (e.g., 'W21') appears in the top-right corner to quickly identify when the company participated in Y Combinator.
+
+- **Description**
+  - A brief overview or tagline of the company’s business.
+
+- **Category & Timeline**
+  - The company’s industry sector (e.g., SaaS, Marketplace).
+  - Founded year to shutdown year span, including total funding raised.
+
+- **Shutdown Reason**
+  - A concise statement explaining why the company ultimately failed.
+
+### Practical Tips
+
+- Hover over cards (where supported) to see additional details or highlights.
+- Use badges as quick visual indicators to filter or scan companies by batch.
+
+<Note>
+Company Cards use consistent styling to highlight important data while maintaining readability and ease of comparison.
+</Note>
+
+---
+
+## 2. Leveraging Badges
+
+Badges are small UI elements that encapsulate status or category information instantly.
+
+### How to Use Batch Badges Effectively
+
+- Look for the batch badge on each company card to link companies to specific YC batches.
+- Use badges as visual anchors when scanning through grids—batch badges help you group companies chronologically.
+- Badge colors and variants distinguish their purpose. For example, the "destructive" variant in red marks batches for quick attention.
+
+<Info>
+Batch badges aren’t just decorative — they’re critical for filtering and identifying trends across YC cohorts.
+</Info>
+
+---
+
+## 3. Navigating with the Hover Card (Tooltip-like Popovers)
+
+Hover Cards enhance your understanding by providing contextual information instantly on mouse hover or keyboard focus.
+
+### How to Use Hover Cards
+
+- Hover over interface elements, terms, or company names where tooltips are enabled to reveal extra explanations or metadata.
+- Hover Cards relieve clutter by hiding less-critical info until you need it.
+- They provide a smooth, non-intrusive way to support learning as you explore.
+
+<Warning>
+Hover Cards require cursor interaction and may not function on all mobile devices. Use alternate navigation or tap if applicable.
+</Warning>
+
+<Code>
+// Usage example in code
+<HoverCard>
+  <HoverCardTrigger>Company Name</HoverCardTrigger>
+  <HoverCardContent>Detailed company info or explanation here</HoverCardContent>
+</HoverCard>
+</Code>
+
+---
+
+## 4. Receiving Feedback via Toast Notifications
+
+Toast notifications keep you informed of system messages without disrupting your flow.
+
+### Common Uses of Toasts
+
+- Confirmations when applying or clearing filters.
+- Alerting you to system errors or important updates.
+- Notifications for actions like searches that yield no results.
+
+### How Toasts Work
+
+- Toasts appear briefly on screen, often top-right or bottom-right.
+- They automatically disappear after a delay but can be manually dismissed.
+- Only one toast is visible at a time to reduce noise.
+
+### Best Practices
+
+- Pay attention to toast messages — they often guide next steps.
+- If you miss a toast, try reproducing the action to trigger it again.
+
+<Tip>
+Toast notifications enhance awareness. Don't ignore them, especially when troubleshooting filtering or search issues.
+</Tip>
+
+---
+
+## 5. Efficient Use of Filters and Search Inputs
+
+Though this guide focuses on UI features, it’s critical to combine them effectively with filters and search inputs:
+
+- Use search boxes to quickly locate companies by name or keywords.
+- Combine category and batch filters with badges and cards to narrow results with precision.
+- Toast notifications will alert you if no results match your criteria.
+
+<Check>
+Refine your queries using badges as visual guides to filter by YC batch, and verify filtered results through company cards.
+</Check>
+
+---
+
+## 6. Practical Example Workflow
+
+<Steps>
+<Step title="Start by Browsing the Company Grid">
+Scan the company cards and spot the batch badges to identify interesting startup cohorts.
+</Step>
+<Step title="Use Hover Cards for Additional Details">
+Hover over company names or UI elements when you need more context without losing your place.
+</Step>
+<Step title="Apply Filters and Use Search">
+Filter companies by category or batch and search terms to pinpoint startups that match your interests.
+</Step>
+<Step title="Watch for Toast Confirmations">
+Notice toast messages confirming your filter applications or notifying no results found.
+</Step>
+</Steps>
+
+---
+
+## 7. Troubleshooting Common UI Issues
+
+- **No Cards Displayed After Filtering**
+  - Confirm your filters and search terms for typos or overly narrow criteria.
+  - Toast notifications will usually confirm no results found.
+
+- **Hover Cards Not Showing**
+  - Ensure your cursor is correctly positioned and that JavaScript is enabled.
+  - Hover Cards may not display on touch-only devices.
+
+- **Toast Notifications Not Appearing**
+  - Verify you have not disabled notifications or have conflicting browser settings.
+  - Refreshing the app can help reset the toast queue.
+
+---
+
+## 8. Summary
+
+Mastering these UI features enables you to navigate the complex dataset with clarity and ease, making Y Combinator Graveyard Stories an insightful, user-friendly tool to uncover startup failure patterns.
+
+---
+
+## Related Documentation & Next Steps
+
+- [Browsing YC Graveyard Stories](/guides/core-workflows/browse-companies): Learn how to explore the landing page and company grid in depth.
+- [Filtering and Searching for Companies](/guides/core-workflows/filter-search): Master powerful filters and search techniques.
+- [Understanding Company Shutdowns](/guides/core-workflows/reading-stories): Deep dive into shutdown reasons and company history.
+- [Quick Feature Glance](/overview/getting-started-intro/quick-feature-glance): Overview of main app features.
+
+These guides build on your UI knowledge to deepen your insights and data exploration skills.
+
+---
+
+<Info>
+For advanced users, combining efficient UI interaction with analytical workflows dramatically shortens your path to meaningful insights.
+</Info>

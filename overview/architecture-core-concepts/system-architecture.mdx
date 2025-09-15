@@ -1,0 +1,150 @@
+---
+title: "System Architecture Overview"
+description: "See how the app is structured from front-end to data aggregation using a simple architecture diagram. This includes entrypoints, core React components, data aggregation logic, and filtering flows. Understand key communication patterns and where major responsibilities live."
+---
+
+# System Architecture Overview
+
+## Understanding the Structure of Y Combinator Graveyard Stories
+
+Explore how this interactive web app is architected, from the user’s first interaction at the front-end through the layers of core React components to the data aggregation and filtering flows powering an insightful experience. This overview provides clarity on the app’s key communication patterns and where major responsibilities reside.
+
+---
+
+## Why This Matters
+
+For users exploring failed YC startups, understanding the architecture clarifies how data flows, how UI updates occur dynamically, and how filtering and searching offer responsive results. For developers and curious users alike, this insight helps in grasping how the app efficiently aggregates data while keeping the interface fast and intuitive.
+
+---
+
+## High-Level Architecture
+
+At the highest level, the app consists of the following distinct layers:
+
+- **Entrypoints:** The initial HTML page loads the React application where the routing and global providers initialize.
+- **Core React Components:** These include essential UI building blocks like navigation, filtering controls, and the main content display components.
+- **Data Aggregation Logic:** Centralized hooks and functions manage data fetching, filtering, and computation of statistics.
+- **Filtering Flows:** User-driven filtering triggers updates that cascade through components, dynamically reshaping displayed results.
+
+This flow ensures a seamless transition from data to display, providing users with an engaging, real-time exploration capability.
+
+---
+
+## Key Components and Communication Patterns
+
+### Entrypoints
+- The React app bootstraps in `src/main.tsx`, mounting the root React component.
+- The root component `App` in `src/App.tsx` sets up routing, global providers such as tooltips and query clients, and hosts the main routes including the home page.
+
+### Core UI Components
+- **NavigationMenu:** Offers site-wide navigation with dropdowns and responsive interactions.
+- **Sidebar and FiltersSection:** A collapsible sidebar and filter controls enable precise company filtering by category, batch, and search terms.
+- **CompanyGrid:** Displays filtered company cards, reflecting the latest user selections instantly.
+
+### Data Management
+- **useCompanyData Hook:** This is the heart of data aggregation and filtering. It loads the base dataset (`allDeadCompanies`) and computes derived data points like categories, batches, total funding, and average lifespan.
+- It exposes `filterCompanies`, a performant function that dynamically refines the displayed list based on multiple filter criteria.
+
+### User-Driven Filtering Flow
+
+Every change in the filters (search term, category, batch) flows like this:
+
+1. User interacts with filter controls in the sidebar.
+2. State updates in `Index.tsx` for each filter.
+3. Filter states trigger `filterCompanies` via React’s `useMemo` to minimize computations.
+4. Filtered results update the `CompanyGrid` display.
+
+This reactive flow ensures immediate feedback with minimal delay.
+
+---
+
+## Architecture Diagram
+
+```mermaid
+flowchart TD
+
+  subgraph Entrypoint
+    MainTSX["src/main.tsx: React App Mount"]
+    AppTSX["src/App.tsx: Root App Component"]
+  end
+
+  subgraph Routing & Providers
+    AppTSX --> TooltipProvider["TooltipProvider"]
+    AppTSX --> QueryClientProvider["React Query Client"]
+    QueryClientProvider --> Routes["React Router: Route Definitions"]
+    Routes --> IndexPage["Index.tsx: Homepage"]
+  end
+
+  subgraph UserInterface
+    IndexPage --> HeroSection
+    IndexPage --> FiltersSection
+    IndexPage --> CompanyGrid
+    IndexPage --> Footer
+  end
+
+  subgraph DataLayer
+    DataSet["allDeadCompanies Dataset"]
+    useCompanyData["useCompanyData Hook"]
+  end
+
+  subgraph FilteringFlow
+    FiltersSection -->|Updates filter state| IndexPage
+    IndexPage -->|Calls| useCompanyData
+    useCompanyData --> DataSet
+    useCompanyData --> FilterCompanies["filterCompanies() Function"]
+    FilterCompanies -->|Filtered list| CompanyGrid
+  end
+
+  %% Relationships
+  MainTSX --> AppTSX
+
+  classDef rectangular fill:#cce5ff,stroke:#3399ff,stroke-width:2px
+  class Entrypoint,Routing & Providers,UserInterface,DataLayer,FilteringFlow rectangular
+```
+
+---
+
+## Practical Example: Filtering a Batch
+
+Imagine a user seeks startups from the Winter 2018 batch:
+
+- They select the "Winter 2018" batch filter.
+- This triggers a state update in `Index.tsx`, which calls `filterCompanies`.
+- `filterCompanies` scans the dataset to return companies matching the batch.
+- `CompanyGrid` instantly refreshes to show only Winter 2018 startups.
+
+This flow makes exploration immediate and intuitive.
+
+---
+
+## Best Practices and Tips
+
+- **Responsive Filtering:** Use the sidebar filters to quickly narrow down companies. The architecture guarantees quick updates with minimal lag.
+- **Use the Search:** Combined filtering by category and text search leverages the central filtering logic for best results.
+- **Understand Component Roles:** Navigating through components like `FiltersSection` and `CompanyGrid` helps grasp how UI and data interplay.
+
+---
+
+## Troubleshooting Common Issues
+
+- **Delayed Filtering Results:** Verify that React states for filters update properly and that `useMemo` dependencies include all relevant inputs.
+- **Empty Results Unexpectedly:** Ensure filter criteria do not combine overly restrictive conditions; apply one filter at a time to debug.
+- **UI Not Rendering:** Check if `Index.tsx` properly imports and renders components, and that routing is correctly configured in `App.tsx`.
+
+---
+
+## Next Steps
+
+- Dive into the [Core Concepts & Terminology](/overview/architecture-core-concepts/core-concepts-terminology) page to understand foundational terms.
+- Explore [Browsing YC Graveyard Stories](/guides/core-workflows/browse-companies) for usage workflows reflecting this architecture.
+- Learn about [Filtering and Searching for Companies](/guides/core-workflows/filter-search) to master user interaction with the filtering flows.
+
+---
+
+This systematic architecture balances maintainability and user experience, enabling you to explore YC startup failure data efficiently and responsively.
+
+---
+
+<Info>
+This documentation is based on the latest main branch source code and reflects the current design choices and component responsibilities.
+</Info>

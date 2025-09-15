@@ -1,0 +1,95 @@
+{
+  "background": {
+    "decoration": "gradient"
+  },
+  "colors": {
+    "dark": "#1E3A8A",
+    "light": "#60A5FA",
+    "primary": "#60A5FA"
+  },
+  "favicon": "/favicon.svg",
+  "fonts": {
+    "family": "Montserrat",
+    "format": "woff2",
+    "source": "https://fonts.gstatic.com/s/googlesansflex/v5/t5sJIQcYNIWbFgDgAAzZ34auoVyXkJCOvp3SFWJbN5hF8Ju1x6sKCyp0l9sI40swNJwGpVd4AZzz0v6lJ4qFXNZhGjLvDSkV4USKMo6qQzwliVdHAy9jxTDHg_ugnAakpwGc-cxgUqDCIUI.woff2"
+  },
+  "icons": {
+    "library": "fontawesome"
+  },
+  "logo": {
+    "dark": "./logo/logo.svg",
+    "light": "./logo/logo.svg"
+  },
+  "name": "Y Combinator Graveyard Stories",
+  "navigation": {
+    "tabs": [
+      {
+        "groups": [
+          {
+            "group": "Product Essentials",
+            "pages": [
+              "overview/getting-started-intro/product-overview",
+              "overview/getting-started-intro/value-use-cases",
+              "overview/getting-started-intro/quick-feature-glance"
+            ]
+          },
+          {
+            "group": "How It Works: Architecture \u0026 Concepts",
+            "pages": [
+              "overview/architecture-core-concepts/system-architecture",
+              "overview/architecture-core-concepts/core-concepts-terminology",
+              "overview/architecture-core-concepts/integration-and-expansion"
+            ]
+          }
+        ],
+        "tab": "Overview"
+      },
+      {
+        "groups": [
+          {
+            "group": "Welcome \u0026 Setup",
+            "pages": [
+              "getting-started/welcome-setup/introduction-overview",
+              "getting-started/welcome-setup/choose-your-path",
+              "getting-started/welcome-setup/prerequisites"
+            ]
+          },
+          {
+            "group": "Installation \u0026 First Run",
+            "pages": [
+              "getting-started/installation-first-run/web-setup-lovable",
+              "getting-started/installation-first-run/local-install-dev",
+              "getting-started/installation-first-run/github-codespaces-editing",
+              "getting-started/installation-first-run/validation-troubleshooting"
+            ]
+          }
+        ],
+        "tab": "Getting Started"
+      },
+      {
+        "groups": [
+          {
+            "group": "Core Workflows",
+            "pages": [
+              "guides/core-workflows/browse-companies",
+              "guides/core-workflows/filter-search",
+              "guides/core-workflows/reading-stories"
+            ]
+          },
+          {
+            "group": "Advanced Usage \u0026 Best Practices",
+            "pages": [
+              "guides/advanced-usage/data-insights",
+              "guides/advanced-usage/ui-efficiency"
+            ]
+          }
+        ],
+        "tab": "Guides"
+      }
+    ]
+  },
+  "styling": {
+    "codeblocks": "dark",
+    "eyebrows": "breadcrumbs"
+  }
+}

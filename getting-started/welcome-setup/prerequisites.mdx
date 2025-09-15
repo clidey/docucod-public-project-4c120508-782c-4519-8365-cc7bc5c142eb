@@ -1,0 +1,128 @@
+---
+title: "Prerequisites & System Requirements"
+description: "A clear, actionable checklist of necessary tools and supported environments, including Node.js, npm, code editors, and any platform notes needed before setup. Links to official installation instructions are included."
+---
+
+# Prerequisites & System Requirements
+
+Before you start setting up Y Combinator Graveyard Stories, ensure your environment meets the following specifications and you have the necessary tools installed. This checklist guarantees a smooth installation and optimal user experience.
+
+---
+
+## 1. Supported Platforms
+
+- **Operating Systems:**
+  - Windows 10 or later
+  - macOS Catalina 10.15 or later
+  - Linux distributions (Ubuntu 20.04+, Fedora 34+, or equivalent)
+
+> The application relies on Node.js and modern web technologies which are fully supported on these platforms.
+
+## 2. Required Tools & Dependencies
+
+To install and run the application locally, you need the following:
+
+### Node.js
+- **Version:** 18.x or later (including latest LTS)
+- **Reason:** Required for running the server, build tools, and package management.
+- **Installation:** Download from [Node.js official website](https://nodejs.org/en/download/).
+
+### npm (Node Package Manager)
+- Comes bundled with Node.js.
+- **Version:** 8.x or later is recommended.
+
+### Recommended Code Editor
+- **Visual Studio Code (VS Code):**
+  - Provides excellent TypeScript and React support.
+  - Extensions Recommended:
+    - ESLint (helps keep your code quality high)
+    - Tailwind CSS IntelliSense (for styling productivity)
+    - Prettier (for code formatting consistency)
+- **Download:** [VS Code Official Site](https://code.visualstudio.com/)
+
+### Git
+- Required for cloning the repository and version control.
+- **Installation:** [Git Official Download](https://git-scm.com/downloads)
+
+---
+
+## 3. Network Requirements
+
+- Internet access to download dependencies and libraries during installation.
+- Connectivity to GitHub for cloning the repo and fetching updates.
+
+> No special firewall configuration is typically needed.
+
+---
+
+## 4. Additional Environment Notes
+
+- **Environment Variables:** No specific environment variables are required for initial setup.
+- **Ports:** The web application will use default web ports (usually 3000) when running locally. Ensure these ports are not blocked or in use.
+- **Permissions:** You should have local administrative privileges to install software and run commands.
+
+---
+
+## 5. Verifying Your Environment
+
+Before proceeding, check your versions to confirm compatibility:
+
+```bash
+node -v
+# Expected output: v18.x.x or higher
+
+npm -v
+# Expected output: 8.x or higher
+
+git --version
+# Should return git version string
+```
+
+If versions are below requirements, update Node.js and npm accordingly.
+
+---
+
+## 6. Helpful Links to Installation Guides
+
+- [Node.js Installation Guide](https://nodejs.org/en/download/)
+- [Visual Studio Code Installation Guide](https://code.visualstudio.com/docs/setup/setup-overview)
+- [Git Installation Instructions](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+
+---
+
+## 7. Tips & Best Practices
+
+- Always use the LTS (Long Term Support) version of Node.js for stability.
+- Keep your development tools (VS Code, extensions) updated for best compatibility.
+- Use the bundled ESLint configuration included in the project to maintain code quality.
+- Refer to the `eslint.config.js` provided in the project repository for linting rules.
+
+---
+
+## 8. Common Pitfalls
+
+- Using incompatible Node.js versions may cause build or runtime errors.
+- Firewall or proxy restrictions may block package downloads; ensure internet access.
+- Not having git installed or configured properly can prevent cloning and version control.
+
+---
+
+For complete setup instructions, please continue to the [Local Installation & Running with Your IDE](../installation-first-run/local-install-dev) page.
+
+---
+
+### Quick Navigation
+- [What is Y Combinator Graveyard Stories?](../../overview/getting-started-intro/product-overview)
+- [Ways to Get Started](../welcome-setup/choose-your-path)
+- [Local Installation & Running with Your IDE](../installation-first-run/local-install-dev)
+
+---
+
+The prerequisites outlined here prepare you for a successful installation and first run of the application.
+
+
+---
+
+_Last updated on 2024-06_
+
+---

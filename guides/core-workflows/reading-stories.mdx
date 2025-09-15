@@ -1,0 +1,148 @@
+---
+title: "Understanding Company Shutdowns"
+description: "Dive deeper into the story of each company. This guide explains how to interpret the company detail cards, including funding, founding/shutdown dates, and reasons for shutdown, helping users make sense of each case study."
+---
+
+# Understanding Company Shutdowns
+
+Explore the stories behind each company shutdown on their detail cards. This guide will help you interpret key information such as funding amounts, active years, and reasons for shutdown, so you can gain meaningful insights from each case study.
+
+---
+
+## 1. What is the "Understanding Company Shutdowns" Page?
+This page presents detailed cards for individual Y Combinator companies that have shut down. Each card reveals vital information that helps you grasp the lifecycle and failure factors of these startups.
+
+You will find these cards interactively on the platform, allowing for quick yet deep dives into each company’s history and shutdown story.
+
+---
+
+## 2. Components of a Company Detail Card
+
+Each company card is designed to provide the most relevant details for understanding a startup's journey, succinctly highlighted through visual and textual elements.
+
+### Key Elements:
+
+- **Company Name & Batch**
+  - Displayed prominently at the top.
+  - The batch badge (e.g., YC Winter 2020) indicates the startup cohort.
+
+- **Description**
+  - A brief summary or elevator pitch describing what the company aimed to do.
+
+- **Category**
+  - Identifies the industry or sector the startup operated in.
+
+- **Founding and Shutdown Dates + Funding**
+  - Shows the company’s active years.
+  - Displays the total funding raised, demonstrating investor confidence and scale.
+
+- **Shutdown Reason**
+  - Explains why the company closed, providing direct insight into failure factors.
+
+### Visual Indicators:
+
+- Icons enhance readability and quick recognition:
+  - **Building Icon**: Associates with the company’s category.
+  - **Calendar Icon**: Marks important dates.
+  - **Alert Icon**: Highlights the shutdown reason with emphasis, often styled in red to denote failure or caution.
+
+#### Example Structure (simplified):
+
+```tsx
+<Card>
+  <CardHeader>
+    <CardTitle>{company.name}</CardTitle>
+    <Badge>{company.batch}</Badge>
+    <CardDescription>{company.description}</CardDescription>
+  </CardHeader>
+  <CardContent>
+    <div>
+      <Building2 /> <span>{company.category}</span>
+    </div>
+    <div>
+      <Calendar /> <span>{company.founded} - {company.shutdownYear} • {company.funding} raised</span>
+    </div>
+    <div>
+      <AlertCircle /> <span>{company.reason}</span>
+    </div>
+  </CardContent>
+</Card>
+```
+
+This component structure ensures clarity and consistency across all company detail cards.
+
+---
+
+## 3. How to Interpret Company Details
+
+### Reading the Timeline
+- The **founding year** to **shutdown year** span shows the company's operational duration.
+- A short lifespan with high funding may suggest rapid failure, while a long lifespan often indicates a more complex story.
+
+### Funding Information
+- Represents total capital raised.
+- Larger funding rounds do not guarantee success; this data helps contrast investment with outcomes.
+
+### Shutdown Reason
+- Understand the causes behind each failure.
+- Common reasons include market fit issues, financial mismanagement, or strategic errors.
+
+This insight supports learning from patterns and mistakes to improve future startup success forecasting.
+
+---
+
+## 4. Practical Tips for Using the Company Cards
+
+- **Compare Across Companies:** Use the detail cards to identify trends across batches or categories.
+- **Focus on Reasons:** Pay special attention to the shutdown reasons to better understand startup pitfalls.
+- **Analyze Funding vs Lifespan:** Watch how funding correlates with company longevity and failure reasons.
+
+---
+
+## 5. Troubleshooting Common Interpretation Challenges
+
+<AccordionGroup title="Troubleshooting Guide">
+<Accordion title="Card Missing Shutdown Year or Funding">
+If a company card does not display shutdown year or funding:
+- These fields might be unavailable because of incomplete data.
+- Use caution drawing conclusions and cross-reference other sources if needed.
+</Accordion>
+<Accordion title="Unclear Shutdown Reason">
+Sometimes reasons may appear vague or generalized.
+- Hover or click the shutdown description if interactive.
+- Consult related documentation or stories for more context.
+</Accordion>
+<Accordion title="Confusing Date Formats or Batch Labels">
+- Batches follow Y Combinator's naming (e.g., 'Winter 2020').
+- Dates are in year format and represent calendar years.
+- Misreading batches or dates can lead to incorrect timeline assumptions.
+</Accordion>
+</AccordionGroup>
+
+---
+
+## 6. Next Steps and Related Content
+
+- For a broader view, explore the [Browsing YC Graveyard Stories](/guides/core-workflows/browse-companies) guide to learn how to discover companies effectively.
+- Use filters with the guidance from [Filtering and Searching for Companies](/guides/core-workflows/filter-search) to target specific sectors or failure types.
+- To deepen your understanding of startup failures, combine insights from this page with [Target Audience & Use Cases](/overview/getting-started-intro/value-use-cases) documentation.
+
+---
+
+## 7. Summary
+
+Understanding the company shutdown cards equips you to analyze failure patterns in the YC ecosystem. This page reveals how to read funding, operational dates, and failure reasons effectively, providing a vital lens for learning from past startup experiences.
+
+---
+
+For implementation details or UI features related to company cards, refer to [CompanyCard component](https://github.com/modelorona/ycombinator-graveyard-stories/blob/main/src/components/CompanyCard.tsx).
+
+---
+
+<Tip>
+Explore the card elements interactively and use the filters on the main platform to target specific company profiles for focused learning.
+</Tip>
+
+<Check>
+Confirm you can identify each key data point on the company cards after reading this guide: name, batch, description, category, founding/shutdown years, funding raised, and shutdown reason.
+</Check>

@@ -1,0 +1,175 @@
+---
+title: "Quick Validation & Troubleshooting"
+description: "How to confirm that the setup is working—e.g., accessing the preview in your browser, observing automatic reloads, and checking for success messages. Covers the most common setup issues and practical troubleshooting tips."
+---
+
+# Quick Validation & Troubleshooting Guide
+
+Ensure your setup of **Y Combinator Graveyard Stories** is functioning correctly by following this guide. Learn how to confirm the app runs, observe live reload behavior, identify success signals, and troubleshoot common issues.
+
+---
+
+## 1. Confirming the Setup is Working
+
+### 1.1 Access the Preview in Your Browser
+
+- After starting the project through your chosen method (e.g., local installation with your IDE or using the Lovable web interface), open your browser.
+- Navigate to `http://localhost:3000` or the URL provided by your environment.
+- You should see the app’s homepage showing the YC Dead Pool dashboard:
+  - Total number of failed companies
+  - Total funding lost
+  - Average years companies were active
+
+If you reach this page, the web server is running and serving the frontend UI successfully.
+
+### 1.2 Observe Automatic Reloads
+
+- Change any source code file (for example, update filter options or the homepage text).
+- Save the file.
+- The preview in the browser should automatically reload to reflect your changes within 1-3 seconds.
+
+This live reload feature confirms your development environment is watching files properly and the build system is responding to code changes.
+
+### 1.3 Look for Success Messages in Console
+
+- Check your terminal where you ran the start or build command.
+- You should see messages like:
+  ```
+  vite vX.X.X dev server running at:
+  > Local: http://localhost:3000/
+  ```
+- In the browser console, absence of errors and presence of UI components (filters, company grid) indicates success.
+
+---
+
+## 2. Common Setup Issues and How to Troubleshoot
+
+### 2.1 The App Does Not Load or Browser Shows Blank Page
+
+- **Verify the server is running:**
+  - Ensure you executed the start command correctly:
+  ```bash
+  npm install
+  npm run dev
+  ```
+- **Check for errors in terminal:** Any build errors will prevent startup.
+- **Inspect browser console:** Look for runtime JavaScript errors.
+- **Ensure correct URL:** Confirm you open `http://localhost:3000` or your environment’s specified address.
+
+### 2.2 Changes Do Not Reflect in Browser
+
+- **Check if live reload is enabled:**
+  - If using local install, verify the development server didn’t crash.
+- **Try manual refresh:** Press Ctrl+R or Cmd+R.
+- **Confirm file saving:** Some editors delay saves; verify files are fully saved.
+
+### 2.3 Errors Related to Missing Modules or Commands
+
+- Run:
+  ```bash
+  npm install
+  ```
+- Verify your Node.js version is v18 or higher.
+- Confirm you have `npm` and `Git` installed.
+
+### 2.4 Sidebar or UI Does Not Display Correctly
+
+- The sidebar uses keyboard shortcuts (Cmd/Ctrl + B) and adapts to mobile view.
+- Try toggling the sidebar using these shortcuts if it’s hidden.
+- Check viewport widths or browser zooms that may affect layout.
+
+---
+
+## 3. Step-by-Step Setup Validation Example (Local Installation)
+
+<Steps>
+  <Step title="Step 1: Start your development server">
+    Open your terminal and from your project root run:
+    ```bash
+    npm run dev
+    ```
+    Wait until you see a message indicating the dev server is running.
+  </Step>
+
+  <Step title="Step 2: Open the app in a browser">
+    Navigate to:
+    ```
+    http://localhost:3000
+    ```
+    Confirm the YC Dead Pool landing page renders.
+  </Step>
+
+  <Step title="Step 3: Test live reload">
+    Edit a file, e.g., `src/components/HeroSection.tsx`.
+    Change some text or color, save it, and watch the browser automatically reload.
+  </Step>
+
+  <Step title="Step 4: Check for runtime errors">
+    Open developer tools in the browser (F12 or Cmd/Ctrl+Shift+I).
+    Confirm no errors exist under the console tab.
+  </Step>
+
+  <Step title="Step 5: Use sidebar toggle">
+    Try Cmd/Ctrl + B to show/hide the sidebar to verify keyboard shortcut functionality.
+  </Step>
+</Steps>
+
+---
+
+## 4. Troubleshooting Tips
+
+<AccordionGroup title="Common Issues & Fixes">
+<Accordion title="Server Fails to Start - Port in Use">
+If the dev server reports "port 3000 is already in use":
+
+- Close other running servers on port 3000.
+- Or run dev server on different port:
+  ```bash
+  npm run dev -- --port=3001
+  ```
+</Accordion>
+<Accordion title="Missing npm or Node.js">
+- Ensure Node.js v18+ is installed:
+  ```bash
+  node -v
+  npm -v
+  ```
+- Install Node.js from https://nodejs.org/ if missing.
+</Accordion>
+<Accordion title="Hot Reload Not Working">
+- Confirm you are running in development mode (`npm run dev`).
+- Restart dev server if reload stops working.
+- Disable browser caching or open in incognito mode.
+</Accordion>
+<Accordion title="Sidebar Keyboard Shortcut Not Working">
+- Verify focus is on the web page.
+- Check browser extensions that may conflict with shortcuts.
+- Try restarting browser.
+</Accordion>
+</AccordionGroup>
+
+---
+
+## 5. Additional Validation Checks
+
+- Browse the filter section and try searching companies — results should update dynamically.
+- Click on any company card to open detailed failure stories.
+- Confirm the footer is displayed.
+
+
+---
+
+## 6. Where to Get Help
+
+- Refer to [Prerequisites & System Requirements](/getting-started/welcome-setup/prerequisites)
+- Review [Local Installation & Running with Your IDE](/getting-started/installation-first-run/local-install-dev) for detailed setup steps
+- Use [Using the Lovable Web Interface](/getting-started/installation-first-run/web-setup-lovable) for zero local setup troubleshooting
+- Join the community or submit issues via the project GitHub: [https://github.com/modelorona/ycombinator-graveyard-stories](https://github.com/modelorona/ycombinator-graveyard-stories)
+
+---
+
+By following this guide, you can quickly validate your setup and resolve common issues to start exploring YC startup failure stories effectively.
+
+---
+
+_This documentation focuses on verifying your immediate environment and UI interactions. For detailed installation, configuration, and usage tutorials, please explore related getting started and guide pages._

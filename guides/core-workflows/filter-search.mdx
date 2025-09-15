@@ -1,0 +1,162 @@
+---
+title: "Filtering and Searching for Companies"
+description: "Discover how to use the app’s search and filter capabilities to find companies by year, batch, category, or other criteria. This tutorial illustrates how filters shape your results and provides strategies for efficient discovery."
+---
+
+# Filtering and Searching for Companies
+
+Discover how to efficiently find failed Y Combinator companies using the app's powerful search and filter tools. This guide walks you through using the search bar, category selector, and batch filter to pinpoint companies by name, reason for shutdown, and other key criteria, streamlining your exploration of the dataset.
+
+---
+
+## 1. Workflow Overview
+
+### What You Will Learn
+This guide helps you master the Filters Section, enabling you to discover companies quickly by applying search terms and filtering by categories and batches.
+
+### Prerequisites
+- Access to the Y Combinator Graveyard Stories web app.
+- Familiarity with the app layout including the Filters Section and company listings.
+
+### Expected Outcome
+By the end, you will confidently use search and filters to narrow down large datasets and uncover detailed information about specific companies or groups.
+
+### Time Estimate
+5-10 minutes
+
+### Difficulty Level
+Beginner
+
+---
+
+## 2. Step-by-Step Instructions
+
+<Steps>
+  <Step title="Using the Search Bar">
+    The search input allows you to look for companies by name, description, or reason for shutdown.
+- Click inside the search box labeled 'Search companies, reasons, or descriptions...'
+- Type keywords related to what you're looking for. For example, enter "music" to find companies involved with music.
+- The app filters results in real-time, showing companies matching your search term.
+
+*Expected Result:* The company grid updates dynamically, displaying companies whose names, descriptions, or reasons contain your search keywords.
+
+*Tip:* Use lowercase or uppercase—it’s case-insensitive.
+  </Step>
+
+  <Step title="Filtering by Category">
+    Narrow down companies by their sector or type.
+- Locate the 'Category' dropdown next to the search bar.
+- Click to open the list of available categories.
+- Select a specific category to view companies only in that sector (e.g., 'Software', 'Entertainment').
+- Choosing 'All Categories' clears the category filter.
+
+*Expected Result:* The list updates to show only companies in the selected category.
+
+*Tip:* You can use category filtering combined with a search term for more precise results.
+  </Step>
+
+  <Step title="Filtering by Batch">
+    Focus your browsing on companies from a particular YC batch.
+- Find the 'Batch' dropdown next to the 'Category' selector.
+- Click to reveal all batch options such as ‘S05’, ‘S06’, etc., including ‘All Batches’.
+- Select a batch to see companies from that specific cohort.
+
+*Expected Result:* The display updates to show companies matching the selected batch.
+
+*Tip:* Batch filters help track trends or failure patterns over specific YC years.
+  </Step>
+
+  <Step title="Combining Filters for Targeted Discovery">
+    Use search, category, and batch filters together for granular navigation.
+- Enter relevant keywords in the search bar.
+- Select a category from the category dropdown.
+- Select a batch from the batch dropdown.
+
+*Expected Result:* The company list dynamically shows companies satisfying all three criteria.
+
+*Verification:* The text below the filters confirms how many companies are currently shown out of the total.
+  </Step>
+
+  <Step title="Understanding Filter Feedback">
+    Pay attention to the summary line below filters.
+- It shows "Showing X of Y companies", where X is the filtered count and Y total in the database.
+
+*Tip:* If no results appear, try broadening your filters or clearing the search term.
+  </Step>
+</Steps>
+
+---
+
+## 3. Examples & Usage Scenarios
+
+### Example 1: Finding Failed Social Media Companies from Batch S08
+- Search term: leave empty
+- Category filter: select 'Social Media'
+- Batch filter: select 'S08'
+
+_Result:_ The app displays social media startups from 2008’s batch, such as "Anyvite" and "Just Spotted".
+
+### Example 2: Searching by Shutdown Reason Keyword
+- Search term: type 'Google'
+- Category filter: 'All Categories'
+- Batch filter: 'All Batches'
+
+_Result:_ Shows companies whose shutdown reasons mention Google, like "Backtype" (shut down after Twitter’s buyout).
+
+### Example 3: Exploring All Hardware Startups
+- Search term: leave empty
+- Category filter: select 'Hardware'
+- Batch filter: 'All Batches'
+
+_Result:_ Lists all hardware companies across batches.
+
+---
+
+## 4. Troubleshooting & Tips
+
+<AccordionGroup title="Common Issues with Filtering and Searching">
+  <Accordion title="No Companies Found When Using Filters">
+    - Ensure your search term is not too restrictive.
+    - Try clearing one or more filters to broaden results.
+    - Check for typos or spelling mistakes.
+  </Accordion>
+  <Accordion title="Filter Dropdowns Not Responding">
+    - Reload the page to reset UI state.
+    - Confirm your internet connection is stable.
+    - Clear browser cache if the problem persists.
+  </Accordion>
+  <Accordion title="Search Results Not Updating Live">
+    - Check if JavaScript is enabled in your browser.
+    - Refresh the page to restore full functionality.
+  </Accordion>
+</AccordionGroup>
+
+<Tip>
+For best performance, avoid combining too many narrow filters unless necessary, as it may result in no matching companies.
+</Tip>
+
+<Tip>
+Use the real-time feedback below the filters ("Showing X of Y companies") to gauge how broad or narrow your search is.
+</Tip>
+
+---
+
+## 5. Next Steps & Related Content
+
+- After mastering filtering, explore [Reading Company Shutdown Stories](/guides/core-workflows/reading-stories) to gain insights from individual company profiles.
+- For broader context, see [Browsing YC Graveyard Stories](/guides/core-workflows/browse-companies) to understand navigation and overall app flow.
+- Learn about category definitions and batch concepts in [Core Concepts & Terminology](/overview/architecture-core-concepts/core-concepts-terminology).
+
+---
+
+## Appendix: Filters Section Component Overview
+
+The Filters Section is composed of:
+- **Search Input:** a text box for keyword searches in company name, reason, or description.
+- **Category Selector:** a dropdown listing all categories plus an option for 'All Categories'.
+- **Batch Selector:** a dropdown listing YC batches with a default 'All Batches'.
+- **Result Summary:** text showing the count of companies matching current filters versus total companies.
+
+These components work together to dynamically refine the dataset displayed in the company grid, providing fast, intuitive discovery.
+
+---

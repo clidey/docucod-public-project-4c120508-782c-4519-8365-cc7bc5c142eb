@@ -1,0 +1,223 @@
+---
+title: "Ways to Get Started"
+description: "A summary of all available onboarding methods—using the Lovable web interface, working locally with your preferred IDE, editing directly on GitHub, or leveraging GitHub Codespaces—enabling users to pick the best fit for their workflow or level of technical comfort."
+---
+
+# Ways to Get Started
+
+Welcome to the 'Ways to Get Started' guide for Y Combinator Graveyard Stories. This page serves as your compass to select the onboarding method that best fits your workflow, skill level, and preferences—whether you prefer the simplicity of a web interface or the power of local development with your preferred IDE.
+
+---
+
+## Overview of Onboarding Methods
+
+Y Combinator Graveyard Stories is designed to be accessible to a broad range of users, from non-technical enthusiasts to seasoned developers. To meet diverse needs, four main onboarding paths are available:
+
+- **Using the Lovable Web Interface**: Perfect for quick exploration without any setup.
+- **Local Installation & Running with Your IDE**: Offers full control for development and customization.
+- **Editing Directly on GitHub**: Enables lightweight editing or content contribution without local setup.
+- **Leveraging GitHub Codespaces**: A cloud-based development environment that provides a ready-to-code workspace.
+
+Each method has distinct benefits and prerequisites, described in detail below to help you quickly choose your path.
+
+---
+
+## 1. Using the Lovable Web Interface
+
+### What It Is
+A hosted web app interface that requires no installation or development setup.
+
+### How to Access
+Simply navigate to the live application URL provided in the main site or documentation home.
+
+### Benefits
+- Instant access to browse and filter company failure stories
+- No technical skills or installations needed
+- Responsive design optimized for any device
+
+### Ideal For
+- Casual users, researchers, or investors interested in exploring data
+- Those wanting a fast, no-fuss introduction
+
+<Check>
+No installation or local setup is necessary. Just open your browser and start exploring.
+</Check>
+
+---
+
+## 2. Local Installation & Running with Your IDE
+
+### Purpose
+For users who want full control over the application, customize features, or contribute code.
+
+### Prerequisites
+- Node.js and package manager (npm or yarn) installed
+- Git installed for cloning the repository
+- A modern IDE such as VSCode
+
+### Installation Steps
+<Steps>
+  <Step title="Clone the Repository">
+  Open your terminal and run:
+  ```bash
+  git clone https://github.com/modelorona/ycombinator-graveyard-stories.git
+  cd ycombinator-graveyard-stories
+  ```
+  </Step>
+  <Step title="Install Dependencies">
+  Run the package manager to install:
+  ```bash
+  npm install
+  # or
+  yarn install
+  ```
+  </Step>
+  <Step title="Start the Development Server">
+  Launch the app locally:
+  ```bash
+  npm run dev
+  # or
+  yarn dev
+  ```
+  This launches a local server accessible via <https://localhost:3000> or the provided terminal URL.
+  </Step>
+  <Step title="Access the App">
+  Open your browser and go to the local URL displayed in your terminal to start using the app.
+  </Step>
+</Steps>
+
+### Benefits
+- Full access to source code for experimentation and learning
+- Ability to customize UI, data filters, or add new features
+- Enables direct debugging and development workflows
+
+<Warning>
+Ensure your environment uses Node.js version compatible with the project's setup to avoid runtime issues.
+</Warning>
+
+---
+
+## 3. Editing Directly on GitHub
+
+### What It Offers
+Modify or enhance the content, data, or documentation directly via GitHub’s web interface.
+
+### How to Use
+1. Navigate to the GitHub repository.
+2. Browse folders and files you want to edit.
+3. Use GitHub’s inline editor to make changes.
+4. Commit changes via pull requests for review.
+
+### Benefits
+- No local setup or command line required
+- Quick fixes, typo corrections, or data updates
+- Collaborative review workflow with other users
+
+### Ideal For
+- Contributors not comfortable setting up local dev environments
+- Quick updates or corrections
+
+<Note>
+You will need a GitHub account and proper permissions to push changes or create pull requests.
+</Note>
+
+---
+
+## 4. Leveraging GitHub Codespaces
+
+### Description
+GitHub Codespaces provides a fully configured cloud development environment with the repository cloned, dependencies installed, and VSCode-like interface available in your browser.
+
+### Getting Started
+1. Log into your GitHub account.
+2. Visit the repository page.
+3. Click on the green "Code" button, then select "Open with Codespaces" and create a new codespace.
+4. Work directly in an online IDE with terminal access.
+
+### Benefits
+- Zero local setup; all tools run in the cloud
+- Uses the same configuration as local development
+- Persistent sessions across different devices
+
+### Ideal For
+- Users with limited computing resources
+- Developers wanting a quick environment setup without local installs
+
+<Check>
+Make sure your GitHub account has access to Codespaces (some accounts may require subscription).
+</Check>
+
+---
+
+## Choosing the Best Fit for You
+
+| Onboarding Method          | Technical Skill            | Setup Required     | Ideal For                               |
+|---------------------------|----------------------------|--------------------|----------------------------------------|
+| Lovable Web Interface      | None                       | None               | Quick exploration, non-developers      |
+| Local Installation & IDE   | Intermediate to Advanced   | Moderate           | Developers, customizers, contributors  |
+| Editing on GitHub          | Basic GitHub familiarity   | None               | Content contributors, quick edits      |
+| GitHub Codespaces          | Basic to Intermediate      | None               | Developers wanting cloud workspace     |
+
+---
+
+## Tips & Best Practices
+
+- **Stay Updated**: Always pull the latest changes when working locally or in Codespaces.
+- **Use Preview Commands**: For local installs, watch the terminal output for feedback and development server addresses.
+- **Version Compatibility**: Check Node.js and npm versions align with project dependencies.
+- **GitHub Workflow**: Use branches for new feature development to keep main branch stable.
+
+---
+
+## Troubleshooting Common Issues
+
+<AccordionGroup title="Troubleshooting Guide">
+<Accordion title="Local Setup Fails to Start">
+- Verify Node.js and npm versions with `node -v` and `npm -v`.
+- Delete `node_modules` and reinstall dependencies.
+- Check for error messages in the terminal; often missing dependencies or permission errors.
+</Accordion>
+<Accordion title="Can't Access Local Server">
+- Confirm the development server is running without errors.
+- Use the exact URL reported in the terminal (often http://localhost:3000).
+- Disable any local firewalls that may block connections.
+</Accordion>
+<Accordion title="Editing Changes Not Reflecting">
+- When editing on GitHub, confirm pull requests are merged.
+- In local or Codespaces, reload the app or restart the dev server.
+</Accordion>
+<Accordion title="GitHub Codespaces Access Issues">
+- Ensure your GitHub plan supports Codespaces.
+- Try logging out and back in.
+- Contact GitHub support if persistent issues occur.
+</Accordion>
+</AccordionGroup>
+
+---
+
+## Next Steps
+
+After picking your onboarding method:
+
+- If on the web interface, start exploring with the [Browsing YC Graveyard Stories guide](/guides/core-workflows/browse-companies).
+- If developing locally or via Codespaces, explore code in `src/pages/Index.tsx` and core components like filters and UI.
+- For customizations, dive into [Local Installation & Running with Your IDE](/getting-started/installation-first-run/local-install-dev) and [Editing via GitHub & Codespaces](/getting-started/installation-first-run/github-codespaces-editing).
+
+Finally, continue with [Quick Validation & Troubleshooting](/getting-started/installation-first-run/validation-troubleshooting) to ensure your setup runs smoothly.
+
+---
+
+## References
+
+- [What is This Project?](/getting-started/welcome-setup/introduction-overview) — General introduction and philosophy
+- [Prerequisites & System Requirements](/getting-started/welcome-setup/prerequisites) — Required software and environment
+- [Using the Lovable Web Interface](/getting-started/installation-first-run/web-setup-lovable) — Details on the hosted web path
+- [Local Installation & Running with Your IDE](/getting-started/installation-first-run/local-install-dev)
+- [Editing via GitHub & Codespaces](/getting-started/installation-first-run/github-codespaces-editing)
+- [Quick Validation & Troubleshooting](/getting-started/installation-first-run/validation-troubleshooting)
+
+This guide empowers you to begin your journey with Y Combinator Graveyard Stories where ease of access meets developer flexibility. Choose your path and start uncovering startup failure insights today.
+
+---
+
+*For detailed system architecture and underlying concepts, refer to the [System Architecture Overview](/overview/architecture-core-concepts/system-architecture) and [Core Concepts & Terminology](/overview/architecture-core-concepts/core-concepts-terminology).*

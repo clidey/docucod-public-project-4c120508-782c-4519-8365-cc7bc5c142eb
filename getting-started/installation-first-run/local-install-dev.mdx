@@ -1,0 +1,175 @@
+---
+title: "Local Installation & Running with Your IDE"
+description: "Detailed instructions for cloning the repository, installing dependencies, and starting the project locally with hot reload via npm scripts. Covers validation steps such as confirming local server startup and troubleshooting environment issues."
+---
+
+# Local Installation & Running with Your IDE
+
+This guide provides clear, step-by-step instructions to clone the Y Combinator Graveyard Stories repository, install all dependencies, and launch the project locally with hot reload using npm scripts. It includes practical validation methods to ensure your development server is running correctly and troubleshooting tips for common environment-related issues.
+
+---
+
+## 1. Prerequisites & Environment Setup
+
+Before diving into the installation, make sure your development environment meets the following requirements:
+
+- **Node.js:** Version 18 or higher
+  - Recommended installation via [nvm (Node Version Manager)](https://github.com/nvm-sh/nvm#installing-and-updating).
+- **npm:** Comes with Node.js, version compatible with your Node.js installation.
+- **Git:** For cloning the repository.
+- **Code Editor:** Visual Studio Code recommended for best experience.
+
+Verify your versions with these commands:
+
+```bash
+node -v
+npm -v
+git --version
+```
+
+<Tip>
+Ensure Node.js 18+ is active. Running an older version may cause build or runtime errors.
+</Tip>
+
+---
+
+## 2. Cloning the Repository
+
+Start by getting the source code locally:
+
+<Steps>
+<Step title="Clone the GitHub repository">
+Run the clone command with the project URL:
+
+```bash
+git clone https://github.com/modelorona/ycombinator-graveyard-stories.git
+```
+</Step>
+<Step title="Navigate into the project directory">
+Change your working directory to the freshly cloned repository:
+
+```bash
+cd ycombinator-graveyard-stories
+```
+</Step>
+</Steps>
+
+<Note>
+If you plan to contribute or edit the code, consider forking the repo first and clone your fork.
+</Note>
+
+---
+
+## 3. Installing Dependencies
+
+To install all required packages that the project depends on:
+
+```bash
+npm install
+```
+
+This command reads the `package.json` and installs everything into a `node_modules` folder.
+
+<Tip>
+Make sure your internet connection is stable during installation to avoid incomplete installs.
+</Tip>
+
+---
+
+## 4. Starting the Development Server
+
+Launch the app locally with hot reload enabled so that changes reflect immediately:
+
+```bash
+npm run dev
+```
+
+This will start the Vite development server, typically accessible at `http://localhost:8080`.
+
+<Info>
+The server runs on port 8080 by default, but you can configure this in `vite.config.ts` if needed.
+</Info>
+
+---
+
+## 5. Validating the Local Setup
+
+After running `npm run dev`:
+
+- Open your browser and navigate to:
+
+  ```
+  http://localhost:8080
+  ```
+
+- You should see the homepage of Y Combinator Graveyard Stories app.
+- The app will hot reload automatically on changes.
+
+<Check>
+If the page loads without errors and you see the main interface, your local setup is successful.
+</Check>
+
+---
+
+## 6. Common Troubleshooting
+
+<AccordionGroup title="Troubleshooting & Common Issues">
+<Accordion title="The development server does not start">
+- Verify Node.js and npm versions.
+- Delete `node_modules` and `package-lock.json`, then run `npm install` again.
+- Check if port 8080 is not blocked or used by another process.
+</Accordion>
+<Accordion title="Page does not load or shows blank screen">
+- Confirm you accessed the correct URL `http://localhost:8080`.
+- Check terminal for build errors or warnings.
+- Review browser console for JavaScript errors.
+</Accordion>
+<Accordion title="Hot reload is not working">
+- Confirm you are running the app in development mode using `npm run dev`.
+- Check for firewall or browser caching issues.
+- Restart the development server.
+</Accordion>
+</AccordionGroup>
+
+---
+
+## 7. Additional Tips & Best Practices
+
+- Use Visual Studio Code with recommended extensions like ESLint and Prettier for a smooth editing experience.
+- Commit and push changes regularly if working with your fork or clone.
+- Familiarize yourself with `package.json` scripts, especially `npm run dev` and `npm run build` for production.
+- Explore the repository’s file structure; the main app entry point is `src/main.tsx`.
+
+---
+
+## 8. Next Steps & Resources
+
+- After local setup, explore guides on browser workflows:
+  - [Browsing YC Graveyard Stories](../guides/core-workflows/browse-companies.md)
+  - [Filtering and Searching for Companies](../guides/core-workflows/filter-search.md)
+- Learn more about extending or customizing the app via [Integrations & Extensibility](../../overview/architecture-core-concepts/integration-and-expansion.md)
+- For quick validation and supporting troubleshooting, refer to [Quick Validation & Troubleshooting](./validation-troubleshooting.md)
+
+---
+
+## Reference: Minimal Start Command Script
+
+```sh
+# Clone the repo
+ git clone https://github.com/modelorona/ycombinator-graveyard-stories.git
+ cd ycombinator-graveyard-stories
+
+# Install dependencies
+ npm install
+
+# Start with hot reload
+ npm run dev
+```
+
+Running these commands successfully positions you to start contributing and exploring the app locally with ease.
+
+---
+
+For detailed environment setup, see: [Prerequisites & System Requirements](../welcome-setup/prerequisites.md).
+
+---
