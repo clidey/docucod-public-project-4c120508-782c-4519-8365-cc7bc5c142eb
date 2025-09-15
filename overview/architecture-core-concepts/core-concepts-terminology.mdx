@@ -1,180 +1,196 @@
 ---
 title: "Core Concepts & Terminology"
-description: "Learn the essential terms and concepts used across the app: what constitutes a 'dead company', how filters and batches work, and which UI elements are central to the workflow. This page clarifies language to ensure everyone speaks the same product language."
+description: "Explanation of key domain terms such as Dead Company, Batch, Category, Funding, 'Shutdown Reason', Filters, and Search. Enables users to confidently navigate the interface and interpret displayed data."
 ---
 
 # Core Concepts & Terminology
 
-Welcome to the foundational glossary of Y Combinator Graveyard Stories. This page breaks down the essential terms and concepts you’ll encounter across the app, ensuring we share a common language. Whether you’re browsing failed startups or analyzing dataset insights, understanding these key ideas will make your experience seamless and insightful.
+Understanding the core terms behind the Y Combinator Graveyard Stories application empowers you to navigate the interface smoothly and interpret the data with confidence. This page explains essential domain concepts such as Dead Company, Batch, Category, Funding, Shutdown Reason, Filters, and Search—providing clarity on what you see and how to use it effectively.
 
 ---
 
-## What Is a "Dead Company"?
+## What You Will Learn Here
 
-In Y Combinator Graveyard Stories, a **dead company** refers to any startup that has officially shut down after participating in a Y Combinator batch. This collection represents the end of a company’s journey in terms of operations, funding, and market presence.
-
-### Why Focus on Dead Companies?
-The purpose is to **learn from failure** — by understanding why these startups didn't survive, founders, investors, and researchers gain critical insights to increase the odds of success in future ventures.
-
-### Attributes of a Dead Company in the Dataset
-Each dead company is characterized by these core data points:
-
-- **Name:** The startup’s official name.
-- **Batch:** The Y Combinator batch they participated in (e.g., `W20`, `S21`).
-- **Year Founded and Shutdown:** Dates marking the startup’s operational lifespan.
-- **Category:** Industry or sector (e.g., `FinTech`, `AI`, `Gaming`).
-- **Funding:** Total raised capital before shutdown.
-- **Description:** Brief overview of their product or mission.
-- **Reason for Shutdown:** The key cause behind the company’s failure, often summarizing market or strategic challenges.
-
-Understanding these attributes helps you filter and analyze companies with precision.
+- What defines a **Dead Company** within the context of this resource
+- The meaning of **Batch** and why it matters
+- How **Category** groups startups for insightful analysis
+- Understanding **Funding** figures and their impact
+- What counts as a **Shutdown Reason** and how to interpret it
+- How to leverage **Filters** and **Search** to find exactly what you need
 
 ---
 
-## Understanding "Batches" and Their Importance
+## Dead Company
 
-The **batch** indicates the cohort during which the company entered Y Combinator. YC operates twice a year, typically labeled by:
+A 'Dead Company' refers to a startup that participated in the Y Combinator program but ultimately failed or shut down. This application catalogues thousands of such companies, tracking their stories, from founding to shutdown.
 
-- **W (Winter)** batch (e.g., `W24` for Winter 2024)
-- **S (Summer)** batch (e.g., `S23` for Summer 2023)
+Each Dead Company entry includes:
 
-### Why Batches Matter
-Batches group startups by timeframe, helping contextualize:
+- **Name**: The startup's official name
+- **Batch**: The YC batch in which the company participated (e.g., S20, W21)
+- **Year Founded** and **Shutdown Year**: The lifespan timeline
+- **Description**: A brief summary of what the company did
+- **Funding**: Total investment raised before shutdown
+- **Category**: Industry or startup sector
+- **Shutdown Reason**: The documented cause for failure
 
-- Economic cycles affecting startups
-- Shifts in technology trends
-- The evolving YC environment
-
-For example, startups in batch `W20` faced very different challenges than those in `S24` due to the pandemic’s impact and emerging tech.
+By exploring these details, users gain invaluable lessons on startup challenges and failure patterns.
 
 ---
 
-## Categories: Navigating Industry Segments
+## Batch
 
-Each startup is assigned a **category** representing its market sector. Categories help you:
+A **Batch** refers to the cohort of startups funded and supported by Y Combinator during a specific season and year. Each batch is denoted by a two-letter and two-digit code:
 
-- Narrow your exploration to industries of interest
-- Compare failure trends across sectors
-- Identify systemic challenges in specific domains
+- **S** stands for Summer (e.g., S20 = Summer 2020)
+- **W** stands for Winter (e.g., W19 = Winter 2019)
 
-Common categories include but are not limited to:
+Why it matters:
 
-- AI
+- Batches indicate contemporaneous market conditions and startup trends.
+- Comparing batches can reveal how startup success and failure drivers shift over time.
+
+Use batches as a filter to focus your analysis on startups launched during particular time frames.
+
+---
+
+## Category
+
+**Category** groups startups based on their primary business focus or industry segment. Examples include:
+
 - Social Media
 - FinTech
-- Healthcare
-- Gaming
+- Hardware
+- AI
 - E-commerce
 
-By filtering companies by category, you can focus on stories most relevant to your research or investment thesis.
+Why categories are useful:
+
+- They let you explore failure trends within specific sectors.
+- You can benchmark startup lifespan and funding across categories.
+- They help drill down from broad failure data to pinpoint industry lessons.
+
+When using the application’s filters, selecting a category narrows down your search to relevant startups.
 
 ---
 
-## Key UI Elements and Their Role in Your Workflow
+## Funding
 
-To maximize your experience, it’s vital to understand the main user interface components:
+**Funding** denotes the total capital raised by a startup before failure. It's expressed in USD and often scaled in millions (M) or billions (B), e.g., "$1750M" for Quibi.
 
-### Filters Section
-Allows you to tailor the data you see based on:
+Why this is important:
 
-- **Search Term:** Find companies using keywords in name, description, or shutdown reason.
-- **Category Selector:** Choose one sector or view all.
-- **Batch Selector:** Filter by YC batch to focus on specific cohorts.
+- Shows the financial scale and investor confidence before shutdown
+- Helps correlate funding amount with startup lifespan and failure causes
 
-This responsive filtering helps you drill down quickly and uncover meaningful insights.
-
-### Company Grid
-Displays filtered companies in a dynamic grid layout. Each company card provides a snapshot:
-
-- Name and batch prominently shown
-- Description and funding details
-- Shutdown reason summarized
-
-If your filter finds no companies, the grid clearly states no matches, helping you adjust quickly.
-
-### Hero Section
-A high-level overview panel summarizing:
-
-- Total failed companies in dataset
-- Collective funding lost
-- Average years active
-
-This snapshot anchors your exploration in context, highlighting the scope and scale of the data.
+Note: Funding values are approximate and sourced from available public data.
 
 ---
 
-## Common Terminology Quick Reference
+## Shutdown Reason
 
-| Term               | Definition                                                                                 |
-|--------------------|--------------------------------------------------------------------------------------------|
-| Dead Company       | A startup that has shut down after participating in a Y Combinator batch.                  |
-| Batch              | A specific cohort and timeframe of startups funded by Y Combinator (e.g., `W23`, `S20`).   |
-| Category           | The industry or market sector the startup belongs to.                                     |
-| Funding            | Total capital raised before shutdown, expressed with currency (e.g., `$500M`).             |
-| Founded            | The year the company started its operations.                                              |
-| Shutdown Year      | The year the company ceased operations.                                                   |
-| Reason             | The key factor(s) that contributed to the startup's shutdown, often market or product-driven. |
+The **Shutdown Reason** captures the primary cause or context behind a startup’s failure. These reasons range from market shifts to technology challenges or business model flaws.
 
----
+Examples include:
 
-## Practical Example: How These Concepts Flow Together
+- "Turned out nobody wanted to watch TV shows in 10-minute chunks"
+- "COVID ended and people remembered they hated talking to strangers"
+- "Google killed it like they kill everything else"
 
-Imagine you want to research failed startups in the **AI** category from the **Winter 2023 (W23)** batch:
+How to use shutdown reasons:
 
-1. Use the **Filters Section**:
-   - Set **Category** filter to `AI`.
-   - Set **Batch** filter to `W23`.
-   - Optionally, enter search terms like "chatbot" or "assistant".
-
-2. View the resulting **Company Grid**, where you’ll see AI startups from W23, including their funding and shutdown reasons.
-
-3. Use the **Hero Section** to grasp how large this subset is relative to the full dataset.
-
-This flow lets you **quickly focus your analysis** on startups matching your research criteria.
+- Gain qualitative insights beyond just numbers
+- Discover recurring themes or surprising failure triggers
+- Inform your own decisions by learning what *not* to do
 
 ---
 
-## Tips and Best Practices
+## Filters
 
-- **Use broad filters first.** Start with ‘all’ in batches and categories to get a sense of the data before narrowing down.
-- **Leverage search wisely.** Search terms are matched across company names, descriptions, and shutdown reasons to maximize hit rates.
-- **Understand batch context.** Differences in economic and tech landscapes across batches may explain failure reasons.
-- **Pay attention to funding.** High funding doesn’t guarantee success; the reasons field reveals strategic insights.
+Filters enable targeted exploration. You can refine the list of startups displayed by:
 
----
+- **Search Term**: Text search across company names, descriptions, and shutdown reasons
+- **Category**: Choose an industry segment to focus on
+- **Batch**: Select a particular YC batch or range of batches
 
-## Troubleshooting Common Pain Points
+This combination allows you to: 
 
-<AccordionGroup title="Common Issues & Solutions">
-<Accordion title="No Companies Found with Filters">
-Make sure your search terms are spelled correctly and avoid overly narrow category and batch combinations. Try resetting filters to ‘all’ and broaden your search.
-</Accordion>
-<Accordion title="Confused About Batch Naming">
-Remember, ‘W’ means Winter batch and ‘S’ means Summer batch, followed by the year (e.g., ‘S20’ is Summer 2020).
-</Accordion>
-<Accordion title="Seeing Unexpected Company Data">
-The dataset aggregates data collected from public sources. Some data may be approximate or contain humorous summaries—use discretion when interpreting.
-</Accordion>
-</AccordionGroup>
+- Quickly pinpoint startups matching your research interest
+- Compare results across different segments or time frames
+- Detect nuanced trends in failed startups
+
+### Best Practices
+
+- Start broad and narrow down filters progressively to avoid empty results
+- Use keywords thoughtfully—try both company names and broad terms
+- Combine category and batch filters for precise snapshots of failure data
 
 ---
 
-## Next Steps
+## Search
 
-You’re now equipped with the terminology and concepts needed to navigate Y Combinator Graveyard Stories effectively. Proceed to:
+The search function is your tool for discovering specific companies or themes. It works by searching through:
 
-- [Browsing YC Graveyard Stories](/guides/core-workflows/browse-companies) to start exploring companies interactively.
-- [Filtering and Searching for Companies](/guides/core-workflows/filter-search) to master precise data queries.
-- [Understanding Company Shutdowns](/guides/core-workflows/reading-stories) for deep dives into failure analyses.
+- Company names
+- Descriptions
+- Shutdown reasons
 
-Explore, learn, and uncover valuable lessons from the startup graveyard.
+Examples:
+
+- Searching "AI" shows all startups involved with artificial intelligence that failed
+- Searching "COVID" highlights companies affected by the pandemic
+
+### Tips for Effective Searching
+
+- Use simple, common keywords for best matches
+- If zero results, try related terms or broader categories
+- Combine search with filters to hone in on exact interests
 
 ---
 
-## References
+## Example User Flow
 
-- [Product Overview](/overview/getting-started-intro/product-overview): Context on the app’s mission and value
-- [System Architecture Overview](/overview/architecture-core-concepts/system-architecture): How these concepts are structured within the app
-- [Key Features at a Glance](/overview/getting-started-intro/quick-feature-glance): Features that leverage these terminologies
+Imagine you want to analyze how the COVID-19 pandemic impacted companies in the Social Media sector:
+
+1. Enter "COVID" in the search field to capture shutdown reasons mentioning the pandemic.
+2. Select "Social Media" in the category filter.
+3. Choose batches around 2020 (e.g., S20, W20).
+4. Review the filtered list to see how many companies shut down and their reasons.
+
+This targeted approach reveals insights on pandemic effects within a defined business category.
 
 ---
+
+## Summary
+
+Knowing these core concepts lets you dive deeper with confidence:
+
+| Term            | What it Means                          | Why it Matters                                  |
+|-----------------|--------------------------------------|------------------------------------------------|
+| Dead Company    | Failed YC startup                     | Core data subject for all analyses              |
+| Batch          | YC funding cohort (season + year)    | Understand temporal trends                       |
+| Category       | Startup industry segment              | Explore sector-specific failure                 |
+| Funding        | Total money raised before shutdown   | Correlate investment with outcomes              |
+| Shutdown Reason| Main cause of failure                 | Gain qualitative lessons                          |
+| Filters        | Tools to refine displayed data        | Find relevant startups fast                      |
+| Search         | Text matching on data fields          | Discover specific companies or themes            |
+
+With these terms clear, you’re well-equipped to explore the Y Combinator Graveyard Stories application fully.
+
+---
+
+## Need More?
+
+For broader understanding, explore:
+
+- [What is Y Combinator Graveyard Stories?](../getting-started-product/about-product)
+- [Product Value & Typical Use Cases](../getting-started-product/value-proposition-use-cases)
+- [Who Should Use This Product?](../getting-started-product/target-audience)
+
+These pages contextualize terminology within the product’s purpose and user benefits.
+
+---
+
+<Info>
+This documentation assumes no prior knowledge of Y Combinator or startup failure reporting. If unfamiliar, start with the product introduction pages.
+</Info>

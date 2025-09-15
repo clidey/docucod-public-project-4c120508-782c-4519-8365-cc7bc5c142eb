@@ -1,0 +1,160 @@
+---
+title: "Initial Configuration"
+description: "Describes any necessary or recommended configuration steps after installation, such as updating config files or customizing environment settings. Ensures your project is tailored to your development environment."
+---
+
+# Initial Configuration
+
+After successfully installing the Y Combinator Graveyard Stories application, it's essential to perform some initial configuration steps. These steps allow you to tailor the project settings to your development environment, ensuring smooth operation and optimal performance.
+
+---
+
+## 1. Overview of Initial Configuration
+
+This page guides you through updating configuration files and customizing environment settings right after installation. Whether you are running the application locally or deploying it to a server, configuring these options will help align the app behavior with your system and preferences.
+
+
+## 2. Locate Configuration Files
+
+The main place to adjust settings for your environment is through files like `vite.config.ts` and environment variables if applicable.
+
+### Key Configuration File:
+- **vite.config.ts**
+
+This file controls how the development server starts, what port it listens on, plugins used for React support, and path aliasing.
+
+For example, the default configuration:
+
+```typescript
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react-swc";
+import path from "path";
+import { componentTagger } from "lovable-tagger";
+
+export default defineConfig(({ mode }) => ({
+  server: {
+    host: "::",
+    port: 8080,
+  },
+  plugins: [
+    react(),
+    mode === 'development' &&
+    componentTagger(),
+  ].filter(Boolean),
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
+}));
+```
+
+**What to note here:**
+- The server will listen on all IPv6 addresses (`"::"`) and port `8080`.
+- React plugin is active.
+- Source alias `@` points to the `src` directory for cleaner imports.
+- In development mode, `lovable-tagger` aids debugging.
+
+
+## 3. Adjust Configuration According to Your Environment
+
+### Step 1: Change Server Port or Host
+If port `8080` is in use or you prefer a different port, change the `port` value:
+
+```typescript
+server: {
+  host: "::",  // Allows external network access
+  port: 3000,   // Custom port, e.g., 3000
+},
+```
+
+### Step 2: Modify Aliases (Optional)
+If you want to change source path aliasing for imports, adjust the `alias` path.
+
+### Step 3: Enable or Disable Plugins
+The configuration conditionally enables the `lovable-tagger` plugin only in development mode. You can add other plugins here if needed.
+
+
+## 4. Environment Variables & .env Files
+
+While this project does not specify required environment variables by default, you may want to customize settings such as API keys, analytics, or feature flags. Follow these steps:
+
+1. Create a `.env` file in the project root.
+2. Add variables prefixed with `VITE_` to make them accessible in your React code.
+
+Example:
+
+```
+VITE_API_ENDPOINT=https://api.example.com
+VITE_FEATURE_FLAG=true
+```
+
+3. Access these in React or config files using `import.meta.env.VITE_API_ENDPOINT`.
+
+
+## 5. Tailwind CSS Customization
+
+Since the styling uses Tailwind CSS (as seen in the `tailwind.config.ts` and `src/index.css`), you may want to adjust the theme colors or extend utility classes. Customize `tailwind.config.ts` to fit your brand or development preferences.
+
+
+## 6. Common Customizations & Recommendations
+
+- **Set the right host:** Using `"::"` allows network access; for local-only work use `"localhost"` to restrict to your machine.
+- **Port conflicts:** If server fails to start, verify no other service occupies the configured port.
+- **Development mode detection:** The config supports conditional plugin loading. Use it to enable debugging or hot module reloaders.
+- **Path aliases:** Simplify imports with clear aliases, but keep them consistent across the project.
+
+
+## 7. Verification Steps
+
+After configuring, verify everything works:
+
+1. Run the development server with:
+
+```bash
+npm run dev
+# or
+pnpm dev
+# or
+yarn dev
+```
+
+2. Open your browser at `http://localhost:8080/` (or your configured port).
+3. Verify the app loads without configuration errors.
+
+
+## 8. Troubleshooting Initial Configuration
+
+<AccordionGroup title="Common Initial Configuration Issues">
+<Accordion title="The server does not start or port is already in use">
+Try changing the port number in `vite.config.ts` to an unused port. Use `lsof` or `netstat` to find processes occupying the port.
+</Accordion>
+<Accordion title="Imports fail due to alias issues">
+Verify the alias path matches the folder structure exactly. Confirm the alias is consistent between `vite.config.ts` and your IDE settings.
+</Accordion>
+<Accordion title="Environment variables are undefined in code">
+Ensure environment variables follow the naming convention starting with `VITE_` and the `.env` file is saved correctly. Restart the development server after `.env` changes.
+</Accordion>
+</AccordionGroup>
+
+
+## 9. Next Steps
+
+With your initial configuration complete and verified, proceed to:
+
+- [Your First Successful Run](getting-started/first-run-config/first-successful-run) — Launch the app and explore the key features.
+- [Troubleshooting Common Setup Issues](getting-started/first-run-config/troubleshooting-basics) — Address any setup challenges.
+
+Refer to the Overview and Architecture sections for deeper understanding and tailoring the app further.
+
+---
+
+<Tip>
+Keep your configuration simple initially. Tweak settings incrementally and verify functionality at each step to avoid confusion.
+</Tip>
+
+<Info>
+Remember, the configurations here are designed to empower you to tailor the project actively. They're your first touchpoint to make the app your own before diving into data exploration and filtering.
+</Info>
+
+---

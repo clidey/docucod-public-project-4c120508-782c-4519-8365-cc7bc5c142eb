@@ -1,0 +1,124 @@
+---
+title: "Who Should Use This Product?"
+description: "Identify the target audience: startup founders, investors, data enthusiasts, decision-makers and designers researching product-market fit or startup lessons. Understand why this tool is relevant to their workflows."
+---
+
+# Who Should Use This Product?
+
+Understanding the intended users of the Y Combinator Graveyard Stories (YC Dead Pool) application is key to unlocking its full value. This page guides you through the primary audiences for this tool, explains why it matters to their workflows, and how it can drive better decisions and outcomes.
+
+---
+
+## Target Audiences
+
+### Startup Founders
+Startup founders are deeply invested in understanding what pitfalls to avoid and how to validate their product-market fit. By exploring a rich database of failed YC startups, founders gain rare insights into failure modes that aren’t openly discussed, helping them make informed strategic choices.
+
+### Investors and Venture Capitalists
+Investors seek data-backed signals to assess risk, identify patterns in startup failures, and refine investment strategies. This product enables investors to dive into the granular details of funding rounds, lifespan, categories, and reasons for shutdown across a wide YC cohort.
+
+### Data Enthusiasts and Researchers
+Analysts, academics, and data scientists interested in startup ecosystems and entrepreneurial failure benefit from a centralized, searchable repository. It provides structured data for trend analysis, academic studies, or journalistic investigations.
+
+### Product Designers and Decision-Makers
+Professionals responsible for product-market fit assessment, feature prioritization, or strategic planning can leverage this tool to benchmark against historical outcomes. Understanding shutdown reasons helps make better product and operational decisions.
+
+---
+
+## Why This Product Fits Seamlessly Into Your Workflow
+
+The YC Dead Pool is designed not just as a static archive but as a dynamic research and discovery platform. Here’s why it’s relevant:
+
+- **Focused on Failure Patterns:** Learn what contributed to shutdowns, funding challenges, or market misfits.
+- **Searchable and Filterable:** Quickly drill down by startup name, category, batch, or reason for shutdown.
+- **Human-Centered Stories:** Go beyond numbers — the curated data includes descriptions and candid reasons for failure.
+- **Data Aggregates at a Glance:** The homepage presents key metrics such as total failed companies, funding lost, and average lifespan — providing instant context.
+
+Whether you’re reviewing pitch decks, preparing a market analysis, or writing a deep dive article, this product connects you directly to the outcomes that matter.
+
+---
+
+## Practical Scenarios
+
+### For Startup Founders
+- **Validating Risks:** Before launching a new feature or pivot, explore similar failed startups to understand avoidable errors.
+- **Competitive Analysis:** Identify how startups in your category historically struggled.
+
+### For Investors
+- **Portfolio Review:** Examine previous funding outcomes by batch or sector.
+- **Risk Assessment:** Use shutdown reasons to adjust expected returns or due diligence checklists.
+
+### For Data Enthusiasts
+- **Trend Spotting:** Extract datasets for failure patterns over time.
+- **Academic Publishing:** Reference a comprehensive YC failure dataset in research papers.
+
+### For Designers and Product Leaders
+- **Product Roadmapping:** Align feature priorities with what failed startups experienced.
+- **Stakeholder Briefings:** Leverage data-backed stories to make a compelling case for strategic adjustments.
+
+---
+
+## Tips for Maximizing Value
+
+- Use the search and filter options extensively to narrow your focus to specific categories or YC batches.
+- Combine keywords from company descriptions and failure reasons for more nuanced results.
+- Reference aggregate data in the hero section to frame your analyses and presentations.
+
+---
+
+## Common Pitfalls to Avoid
+
+- Relying solely on funding amount without considering lifespan and shutdown reasons may give an incomplete view.
+- Overgeneralizing failure reasons across diverse startup categories without segmenting data.
+- Using data humorously or casually; while the site notes some data may not be perfectly accurate, treat insights seriously for informed decision-making.
+
+---
+
+## Next Steps
+
+Ready to dive deeper?
+
+- Explore [What is Y Combinator Graveyard Stories?](/overview/getting-started-product/about-product) to understand the product's purpose.
+- Review [Product Value & Typical Use Cases](/overview/getting-started-product/value-proposition-use-cases) to see how this data applies in practice.
+- Start searching and filtering in the [Main Application Interface](https://github.com/modelorona/ycombinator-graveyard-stories) to experience data first-hand.
+
+---
+
+## Summary
+YC Dead Pool is tailored specifically for founders, investors, researchers, and product professionals who want to glean actionable lessons from the failures of YC startups. By integrating this tool into your workflow, you gain meaningful foresight, avoid common startup pitfalls, and sharpen your strategic edge.
+
+---
+
+_Last updated: 2024_
+
+---
+
+## Code Example: Filtering Companies by Category and Batch
+```tsx
+import { useState, useMemo } from 'react';
+import { useCompanyData } from '@/hooks/useCompanyData';
+
+const useFilteredCompanies = (companies) => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [selectedBatch, setSelectedBatch] = useState('all');
+
+  const { filterCompanies } = useCompanyData(companies);
+
+  const filteredCompanies = useMemo(() => {
+    return filterCompanies(searchTerm, selectedCategory, selectedBatch);
+  }, [searchTerm, selectedCategory, selectedBatch, filterCompanies]);
+
+  return {
+    filteredCompanies,
+    searchTerm,
+    setSearchTerm,
+    selectedCategory,
+    setSelectedCategory,
+    selectedBatch,
+    setSelectedBatch
+  };
+};
+```
+
+This snippet exemplifies how you can filter failed companies using category and batch — essential for tailoring insights to your context.

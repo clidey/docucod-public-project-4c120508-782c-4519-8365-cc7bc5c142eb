@@ -1,0 +1,197 @@
+---
+title: "Installation Methods"
+description: "Explains how to clone the repository, install dependencies, and highlights multiple setup methods: using Lovable, your own IDE, direct GitHub edits, or GitHub Codespaces. Each method is illustrated with concise, actionable steps."
+---
+
+# Installation Methods
+
+Welcome to the installation guide for **Y Combinator Graveyard Stories**. This page walks you through multiple practical ways to set up your development environment, ensuring you can start exploring and contributing to the project with ease. Whether you prefer using the Lovable web interface, your local IDE, direct GitHub edits, or GitHub Codespaces, each approach is covered with clear, actionable steps.
+
+---
+
+## Prerequisites
+
+Before starting any installation method, ensure you have:
+
+- **Git** installed on your system for cloning repositories.
+- **Node.js** (preferably installed via [nvm](https://github.com/nvm-sh/nvm#installing-and-updating)) and **npm**, as these are required to install dependencies and run scripts locally.
+- A GitHub account to access the repository and make edits or create Codespaces.
+
+<Tip>
+If you're unsure about your Node.js and npm versions, run:
+
+```sh
+node -v
+npm -v
+```
+
+You need Node.js version 14 or later.
+</Tip>
+
+---
+
+## 1. Using Lovable
+
+Lovable offers a seamless web-based environment to work directly with your project without any local setup.
+
+### Steps:
+
+1. Navigate to your Lovable project page: [Lovable Project](https://lovable.dev/projects/bf8b556a-d3c3-4a74-9044-29d2e2639fa4).
+2. Use the interactive prompt interface to explore, edit, and commit changes automatically.
+3. Your changes save directly to the repository and sync with other platforms.
+
+<Check>
+This method is perfect for rapid experimentation without worrying about local dependencies.
+</Check>
+
+---
+
+## 2. Setting Up Locally with Your IDE
+
+If you want full control using your own development environment, follow these steps to clone, install, and run the project locally.
+
+### Step-by-Step Instructions:
+
+<Steps>
+<Step title="Clone the Repository">
+Open your terminal and run:
+
+```sh
+git clone https://github.com/modelorona/ycombinator-graveyard-stories.git
+```
+
+This downloads the complete project to your machine.
+</Step>
+
+<Step title="Navigate to the Project Directory">
+
+```sh
+cd ycombinator-graveyard-stories
+```
+
+Change into the project folder to prepare for dependency installation.
+
+</Step>
+
+<Step title="Install Dependencies">
+
+```sh
+npm install
+```
+
+This installs all Node.js dependencies required to run and build the project.
+
+</Step>
+
+<Step title="Start the Development Server">
+
+```sh
+npm run dev
+```
+
+This command launches the local development server with live reload. You can open a browser and navigate to `http://localhost:8080` to see the project.
+
+</Step>
+</Steps>
+
+<Tip>
+If you encounter issues with `npm install`, ensure your Node.js and npm versions meet minimum requirements, or try deleting `node_modules` and reinstalling.
+</Tip>
+
+---
+
+## 3. Editing File(s) Directly on GitHub
+
+For quick, single-file changes or minor updates, GitHub’s built-in file editor allows you to work without cloning.
+
+### How to edit:
+
+1. Navigate to the repository on GitHub: [GitHub Repository](https://github.com/modelorona/ycombinator-graveyard-stories).
+2. Browse to the file you want to edit.
+3. Click the pencil icon (Edit button) in the upper right corner of the file view.
+4. Make your desired changes.
+5. Scroll down to provide a descriptive commit message.
+6. Commit directly to the `main` branch or create a new branch and submit a pull request.
+
+<Warning>
+Direct edits should be limited to minor fixes or documentation updates; complex changes are better done locally or via Codespaces.
+</Warning>
+
+---
+
+## 4. Using GitHub Codespaces
+
+Codespaces provide a full, cloud-hosted development environment directly within GitHub.
+
+### Getting Started:
+
+1. Go to your GitHub repository main page.
+2. Click the green **Code** button near the top right.
+3. Select the **Codespaces** tab.
+4. Click **New codespace** to create a fresh development environment.
+5. The codespace will open in your browser, preconfigured with the project.
+6. You can install dependencies in the Codespace terminal using `npm install`.
+7. Run `npm run dev` to start the development server.
+8. Edit, commit, and push changes as usual, with all Git operations handled from within the Codespace.
+
+<Note>
+Codespaces require a paid GitHub plan after the free trial and have network bandwidth considerations.
+</Note>
+
+---
+
+## Troubleshooting Tips
+
+<AccordionGroup title="Common Setup Issues and Solutions">
+<Accordion title="npm install fails with dependency errors">
+Ensure your Node.js version is compatible. Clear cache before reinstalling:
+
+```sh
+npm cache clean --force
+rm -rf node_modules package-lock.json
+npm install
+```
+</Accordion>
+
+<Accordion title="Development server does not start or port 8080 is busy">
+Verify no other process is using port 8080, or update `vite.config.ts` to change the port under `server.port`.
+</Accordion>
+
+<Accordion title="Git clone authentication errors">
+Make sure you have the right SSH keys added or use HTTPS URL with username and password if required.
+</Accordion>
+
+<Accordion title="Code changes not appearing after pushing">
+Check you pushed to the correct branch and refresh your local environment.
+</Accordion>
+</AccordionGroup>
+
+---
+
+## Summary
+
+You can use the method best suited to your workflow:
+
+- **Lovable** for fast, browser-based editing.
+- **Local IDE setup** for full development power.
+- **GitHub direct editing** for quick fixes.
+- **GitHub Codespaces** for cloud-hosted environments.
+
+Each method will get you started on exploring or enhancing the Y Combinator Graveyard Stories project efficiently.
+
+---
+
+### Additional Resources
+
+- [Prerequisites & System Requirements](/getting-started/setup-installation/prerequisites)
+- [Initial Configuration](/getting-started/first-run-config/basic-configuration)
+- [Troubleshooting Common Setup Issues](/getting-started/first-run-config/troubleshooting-basics)
+
+
+---
+
+For deployment, project sharing, and domain setup, refer to the [Lovable documentation](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide).
+
+---
+
+Happy coding!
